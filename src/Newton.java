@@ -5,7 +5,7 @@ public class Newton {
 
     public static String run(double a, double b, double e, double x0, Equation func){
         double x;
-        if (check(x0,func)) {
+        if (check(a,b,x0,func)) {
 
             while (true) {
                 x = x0 - func.getEq(x0) / func.getDerivate(x0);
@@ -20,7 +20,15 @@ public class Newton {
             return "Неправильный выбор начального приближения.";
         }
     }
-    private static boolean check(double x0, Equation func){
+    private static boolean check(double a, double b, double x0, Equation func){
+        if (a>b){
+            double c = b;
+            b = a;
+            a = c;
+        }
+        if (x0<a||x0>b){
+            return false;
+        }
         return (func.getEq(x0)*func.getDerivate2(x0)>0);
     }
 }
