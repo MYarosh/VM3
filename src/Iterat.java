@@ -20,6 +20,11 @@ public class Iterat {
         }
     }
     private static boolean check(double a, double b, double l, Equation func){
-        return (func.getForIter(a,l)<1 && func.getForIter(b,l)<1);
+        for (double i=a;i<=b;i+=0.01){
+            if (!(abs(func.getDelForIter(i,l))<1)){
+                return false;
+            }
+        }
+        return true;
     }
 }

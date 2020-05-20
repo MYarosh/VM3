@@ -19,4 +19,7 @@ public class Equation {
         return Math.max(getDerivate(b),getDerivate(a));
     }
     public double getRoot(int i){return roots[i];}
+    public double getDelForIter(double x,double l){
+        return l*3*2.335*pow(x,2)+l*2*4.98*pow(x,1)-l*4.52;
+    }
 }
