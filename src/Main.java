@@ -32,8 +32,6 @@ public class Main {
                         line[0] = scanner.next();
                         System.out.println("Введите правую границу:");
                         line[1] = scanner.next();
-                        System.out.println("Введите начальное приближение:");
-                        line[2] = scanner.next();
                         System.out.println("Введите погрешность:");
                         line[3] = scanner.next();
                         cycle = false;
@@ -66,17 +64,17 @@ public class Main {
                         break;
                     }
                     case ("3"): {
-                        answer = Newton.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), Double.parseDouble(line[2]), func);
+                        answer = Newton.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), func);
                         cycle = false;
                         break;
                     }
                     case ("4"): {
-                        answer = Secant.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), Double.parseDouble(line[2]), func);
+                        answer = Secant.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), func);
                         cycle = false;
                         break;
                     }
                     case ("5"): {
-                        answer = Iterat.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), Double.parseDouble(line[2]), func);
+                        answer = Iterat.run(Double.parseDouble(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[3]), func);
                         cycle = false;
                         break;
                     }

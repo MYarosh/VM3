@@ -15,7 +15,7 @@ public class Hord {
                     b = x;
                 }
                 n++;
-                if (abs(x - x0) < e || abs(y) < e) {
+                if (abs(x - x0) < e && abs(y) < e) {
                     break;
                 }
                 x0 = x;

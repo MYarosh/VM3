@@ -3,10 +3,8 @@ import static java.lang.Math.abs;
 public class Newton {
     static int n = 0;
 
-    public static String run(double a, double b, double e, double x0, Equation func){
-        double x;
-        if (check(a,b,x0,func)) {
-
+    public static String run(double a, double b, double e,  Equation func){
+        double x, x0 = func.getX0(a,b);
             while (true) {
                 x = x0 - func.getEq(x0) / func.getDerivate(x0);
                 n++;
@@ -16,19 +14,6 @@ public class Newton {
                 x0 = x;
             }
             return String.format("%.6f %.6f %d", x, func.getEq(x), n);
-        }else{
-            return "Неправильный выбор начального приближения.";
-        }
-    }
-    private static boolean check(double a, double b, double x0, Equation func){
-        if (a>b){
-            double c = b;
-            b = a;
-            a = c;
-        }
-        if (x0<a||x0>b){
-            return false;
-        }
-        return (func.getEq(x0)*func.getDerivate2(x0)>0);
+
     }
 }

@@ -13,13 +13,18 @@ public class Equation {
         return 2.335*3*pow(x,2)+3.98*2*x-4.52;
     }
     public double getForIter(double x,double l){
-        return l*2.335*pow(x,3)+l*4.98*pow(x,2)-l*4.52*x-l*3.11;
+        return l*2.335*pow(x,3)+l*3.98*pow(x,2)-(l*4.52-1)*x-l*3.11;
     }
     public double getMaxDel(double a, double b){
         return Math.max(getDerivate(b),getDerivate(a));
     }
     public double getRoot(int i){return roots[i];}
     public double getDelForIter(double x,double l){
-        return l*3*2.335*pow(x,2)+l*2*4.98*pow(x,1)-l*4.52;
+        return l*3*2.335*pow(x,2)+l*2*3.98*pow(x,1)-(l*4.52-1);
+    }
+    public double getX0(double a,double b){
+        if (getEq(a)*getDerivate2(a)>0){
+            return a;
+        }else return b;
     }
 }
